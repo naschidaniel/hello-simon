@@ -1,0 +1,35 @@
+{
+  "name": "hello",
+  "private": true,
+  "version": "0.1.0",
+  "license": "GNU GENERAL PUBLIC LICENSE",
+  "scripts": {
+    "dev": "vite",
+    "lint": "eslint 'src/**/*.{js,ts,vue}' --fix",
+    "lint-no-fix": "eslint 'src/**/*.{js,ts,vue}'",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^1.0.2",
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^1.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "@vue/cli-plugin-eslint": "^5.0.7",
+    "@vue/cli-plugin-typescript": "^5.0.7",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^11.0.0",
+    "eslint": "^8.19.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.2.0",
+    "prettier": "^2.7.1",
+    "prettier-eslint": "^15.0.1",
+    "typescript": "^4.7.4",
+    "vite": "^2.9.13",
+    "vue-tsc": "^0.38.3"
+  }
+}

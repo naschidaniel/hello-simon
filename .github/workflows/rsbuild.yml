@@ -2,8 +2,7 @@ name: Release
 on:
   push:
     branches: [ main ]
-    tags:
-      - 'v*'
+  workflow_dispatch:
 
 jobs:
   release:
@@ -16,17 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Create Release
-        if: matrix.platform == 'ubuntu-latest'
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          draft: false
-          prerelease: false
       - name: Node.js setup
         uses: actions/setup-node@v1
         with:
@@ -56,20 +44,3 @@ jobs:
           releaseBody: 'See the assets to download this version and install.'
           releaseDraft: false
           prerelease: false
-
-      - name: Upload Release Linux executalbe
-        if: matrix.platform == 'ubuntu-latest'
-        uses: svenstaro/upload-release-action@v2
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./src-tauri/target/release/hello-simon
-          asset_name: hello-simon-linux
-          tag: ${{ github.ref }}
-          overwrite: true
-
-      - name: Upload Windows Executable
-        uses: actions/upload-artifact@v2
-        if: matrix.platform == 'windows-latest'
-        with:
-          name: hello-simon.exe
-          path: ./src-tauri/target/release/hello-simon.exe

@@ -1,4 +1,5 @@
 [![Release](https://github.com/naschidaniel/hello-simon/actions/workflows/release.yml/badge.svg?branch=main)](https://github.com/naschidaniel/hello-simon/actions/workflows/release.yml)
+[![rsbuild](https://github.com/naschidaniel/hello-simon/actions/workflows/rsbuild.yml/badge.svg?tag=v0.1.0)](https://github.com/naschidaniel/hello-simon/actions/workflows/rsbuild.yml)
 
 # Hello Simon
 
